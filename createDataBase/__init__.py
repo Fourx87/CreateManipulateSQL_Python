@@ -1,7 +1,8 @@
-import mysql.connector
+from mysql.connector import *
 from mysql.connector import Error
 
 # Criando um novo Banco de Dados
+
 def create_database(connection, query):
     cursor = connection.cursor()
     try:

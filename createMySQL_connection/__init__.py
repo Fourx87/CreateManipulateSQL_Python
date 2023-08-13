@@ -3,7 +3,7 @@ from mysql.connector import Error
 
 
 # Conectando ao MySQL Server
-def Create_db_connection(host_name, user_name, user_password, db_name):
+def create_db_connection(host_name, user_name, user_password, db_name):
     connection = None
     try:
         connection = mysql.connector.connect(
