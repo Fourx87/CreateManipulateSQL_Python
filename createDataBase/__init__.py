@@ -1,4 +1,4 @@
-from mysql.connector import *
+import mysql.connector
 from mysql.connector import Error
 
 # Criando um novo Banco de Dados

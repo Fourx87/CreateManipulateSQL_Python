@@ -8,7 +8,7 @@ from execucaoConsultasDB import *
 
 
 # Criando conexão com MySQL
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 
 # Consulta para criar banco de dados
 create_database_query = "CREATE DATABASE school"
@@ -63,7 +63,7 @@ CREATE TABLE course (
     client INT
     )
 '''
-connection = create_db_connection('localhost', 'root', 'Arthur12*', 'school')
+connection = create_db_connection('localhost', 'root', '12345', 'school')
 execute_query(connection, create_teacher_table)
 execute_query(connection, create_client_table)
 execute_query(connection, create_participant_table)
@@ -101,7 +101,7 @@ CREATE TABLE take_course (
 );
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 execute_query(connection, alter_participant)
 execute_query(connection, alter_course)
 execute_query(connection, alter_course_again)
@@ -118,7 +118,7 @@ INSERT INTO teacher VALUES
 (6, 'Camila', 'Onofre', 'ENG', 'IRI', '1995-08-09', 67890, '+558331231232');
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 execute_query(connection, pop_teacher)
 
 # Preencher tabela Client
@@ -186,7 +186,7 @@ INSERT INTO take_course VALUES
 (113, 19);
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 execute_query(connection, pop_client)
 execute_query(connection, pop_participant)
 execute_query(connection, pop_course)
@@ -198,7 +198,7 @@ SELECT *
 FROM TEACHER;
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 results = read_query(connection, q1)
 
 '''line()
@@ -233,7 +233,7 @@ ON course.client = client.client_id
 WHERE course.in_school = FALSE;
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 results = read_query(connection, q5)
 
 '''line()
@@ -266,7 +266,7 @@ SET adress = '23 Fingiertweg, 14534 Berlin'
 WHERE client_id = 101;
 """
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 execute_query(connection, update)
 
 # Deletando um cadastro (curso 20 RUS) e consultando logo após
@@ -275,7 +275,7 @@ DELETE FROM course
 WHERE course_id = 20;
 """
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 execute_query(connection, delete_course)
 # Consulta simples Course
 q1_course = '''
@@ -283,7 +283,7 @@ SELECT *
 FROM COURSE;
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 results = read_query(connection, q1_course)
 
 line()
@@ -302,7 +302,7 @@ val = [
     (8, 'Sue', 'Perkins', 'MAN', 'ENG', '1976-02-02', 22222, '+491443456432')
 ]
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 execute_list_query(connection, sql, val)
 
 # Verificando os novos professores
@@ -312,7 +312,7 @@ SELECT *
 FROM TEACHER;
 '''
 
-connection = create_db_connection("localhost", "root", "Arthur12*", "school")
+connection = create_db_connection("localhost", "root", "12345", "school")
 results = read_query(connection, q1)
 
 line()
